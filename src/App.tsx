@@ -7,7 +7,7 @@ let a = value01_01
 function App() {
     return (
         <div className="App">
-            <p>Native JS</p>
+            <p>Native JS with tests</p>
         </div>
     );
 }
