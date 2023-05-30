@@ -32,3 +32,20 @@ fetch('https://google.com/query=promise')
     .catch((err) => {
         console.log(err);
     })
+
+//статический метод all завершится ошибкой, если хоть один из промисов завершиться ошибкой
+//спользуется, когда нужно дождаться выполнения всех промисов
+const promise1 = fetch('https://google.com/query=promise');
+const promise2 = fetch('https://yahoo.com/query=promise');
+const promise3 = fetch('https://duckduckgo.com/query=promise');
+
+const bigPromise = Promise.all([promise1, promise2, promise3]);
+bigPromise
+    .then((resultsArray) => {
+        const googleResults = resultsArray[0];
+        const yahooResults = resultsArray[1];
+        const duckuckgoResults = resultsArray[2];
+    })
+    .catch((err) => {
+        console.log(err);
+    })
