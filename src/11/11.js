@@ -49,3 +49,17 @@ bigPromise
     .catch((err) => {
         console.log(err);
     })
+
+//async await - запускаются и выполняются последовательно, как при then с return
+//сработает catch, если хоть один fetch выполнится с ошибкой
+const doIt = async () => {
+    try {
+        const googleData = await fetch('https://google.com/query=promise');
+        const yahooData = await fetch('https://yahoo.com/query=promise');
+        const duckduckgoData = await fetch('https://duckduckgo.com/query=promise');
+    } catch (err) {
+        console.log('Error in try', err);
+    }
+}
+
+doIt();
