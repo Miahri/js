@@ -4,7 +4,7 @@ function foo() {
         console.log(this);
     };
     a();
-};
+}
 
 foo();
 
@@ -28,11 +28,11 @@ let car1 = {
     },
 };
 
-car.showColor();
+car1.showColor();
 
 //4th example
-const superCar = car;
-car = null;
+const superCar = car1;
+car1 = null;
 superCar.showColor();
 
 //5th example
