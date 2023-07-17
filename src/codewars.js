@@ -19,4 +19,12 @@ function josephus(items,k){
     return res;
 }
 
-josephus([1,2,3,4,5,6,7], 3;
+josephus([1,2,3,4,5,6,7], 3);
+
+function isMerge(s, part1, part2) {
+    return !s ? !(part1 || part2) :
+        s[0] == part1[0] && isMerge(s.slice(1), part1.slice(1), part2) ||
+        s[0] == part2[0] && isMerge(s.slice(1), part1, part2.slice(1));
+}
+
+isMerge('codewars', 'cdwr', 'oeas');
