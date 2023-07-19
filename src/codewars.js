@@ -61,3 +61,17 @@ function firstNonRepeatingLetter(s) {
 }
 
 firstNonRepeatingLetter('sTreSS')
+
+
+//2
+function firstNonRepeatingLetter2(s) {
+    let str = s.toLowerCase();
+    for(let i = 0; i < str.length; i++) {
+        if(str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+            return s[i];
+        }
+    }
+    return "";
+}
+
+firstNonRepeatingLetter2('sTreSS')
